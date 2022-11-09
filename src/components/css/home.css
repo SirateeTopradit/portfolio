@@ -1,12 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-.home{
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@500&display=swap');
+
+h1{
+    font-family: 'Prompt', sans-serif;
+}
+
+.home {
     font-family: 'Press Start 2P', cursive;
 }
 
-.home.dark{
+.home.dark {
     background-image: url("../pic/background.gif");
 }
 
-.home.light{
+.home.light {
     background-image: url("../pic/backgroundL.gif");
+}
+
+.shadow {
+    color: white;
+    position: relative;
+    left: 0;
+    text-shadow:
+        1px 0px 0px #c4dbe2,
+        2px 0px 0px #b4d1d9,
+        3px 0px 0px #a6c6cf,
+        4px 0px 0px #94b8c3,
+        5px 0px 0px #87aeb9,
+        0px 0px 25px rgba(0, 0, 0);
+    transition: .5s ease-in-out;
+}
+
+.shadow:hover {
+    left: 15px;
+    text-shadow:
+        -1px 0px 0px #c4dbe2,
+        -2px 0px 0px #b4d1d9,
+        -3px 0px 0px #a6c6cf,
+        -4px 0px 0px #94b8c3,
+        -5px 0px 0px #87aeb9,
+        0px 0px 25px rgba(0, 0, 0);
 }
