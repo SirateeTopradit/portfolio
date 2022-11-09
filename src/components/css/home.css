@@ -1,12 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 .home{
-    
-    z-index: 1;
+    font-family: 'Press Start 2P', cursive;
 }
 
-.home.darkBG{
+.home.dark{
     background-image: url("../pic/background.gif");
 }
 
-.home.lightBG{
+.home.light{
     background-image: url("../pic/backgroundL.gif");
 }

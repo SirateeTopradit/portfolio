@@ -10,7 +10,7 @@ function Header() {
     const closeMobileMenu = () => setClick(false);
 
     const [theme, setTheme] = useState(
-        localStorage.getItem("theme") || "light"
+        localStorage.getItem("theme") || "dark"
     );
     const toggleTheme = () => {
         if (theme === "light") {
@@ -36,13 +36,13 @@ function Header() {
 
     return (
         <div
-            className={`fixed w-full h-12 header ${
+            className={`fixed w-full h-12 header z-50 ${
                 offset === 0 ? "bg-transparent text-white" : "fff"
             }`}
         >
             <div className="container max-w-6xl ">
-                <div className="flex items-center justify-between h-12 header-container">
-                    <div className="logo-container logo">
+                <div className="flex items-center justify-between h-12 header-container drop-shadow-2xl">
+                    <div className="logo-container logo drop-shadow-2xl">
                         <a href="#">axcvxcv</a>
                     </div>
                     <div className="ml-4 logo-container logo-active">
@@ -55,13 +55,13 @@ function Header() {
                             offset === 0 ? "bg-transparent" : "ffff"
                         }`}
                     >
-                        <li className="menu-link" onClick={closeMobileMenu}>
+                        <li className="menu-link drop-shadow-2xl" onClick={closeMobileMenu}>
                             <a href="#">ABOUT</a>
                         </li>
-                        <li className="menu-link" onClick={closeMobileMenu}>
+                        <li className="menu-link drop-shadow-2xl" onClick={closeMobileMenu}>
                             <a href="#">CONTACT</a>
                         </li>
-                        <li className="menu-link" onClick={closeMobileMenu}>
+                        <li className="menu-link drop-shadow-2xl" onClick={closeMobileMenu}>
                             <a href="#">BLOG</a>
                         </li>
                     </ul>
