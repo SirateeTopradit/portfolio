@@ -1,0 +1,12 @@
+.home{
+    
+    z-index: 1;
+}
+
+.home.darkBG{
+    background-image: url("../pic/background.gif");
+}
+
+.home.lightBG{
+    background-image: url("../pic/backgroundL.gif");
+}
