@@ -10,12 +10,12 @@ function Home() {
 
     useEffect(() => {
         const typed = new Typed(el.current, {
-            strings: ["Handy", "Mandy", "Candy", "More Strings"], // Strings to display
+            strings: ["👋, I'm Siratee topradit", "👯 Welcome to my Portfolio", "🌱 I’m currently learning AI/ML"], // Strings to display
             // Speed settings, try diffrent values untill you get good results
             startDelay: 300,
             typeSpeed: 50,
-            backSpeed: 50,
-            backDelay: 500,
+            backSpeed: 20,
+            backDelay: 1000,
             smartBackspace: true,
             loop: true,
             showCursor: true,
@@ -75,8 +75,9 @@ function Home() {
             <div class="container mx-auto flex px-16 py-24 md:flex-row flex-col items-center">
                 <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-center md:text-left mb-16 md:mb-0 items-center text-center">
                     <h1 className="m-5 text-3xl text-left sm:text-4xl">
+                        <span class="title-font sm:text-xl text-l mb-4 font-medium inline">Hi </span>
                         <span
-                            class="title-font sm:text-4xl text-3xl mb-4 font-medium inline"
+                            class="title-font sm:text-xl text-m mb-4 font-medium inline"
                             ref={el}
                         ></span>
                     </h1>
@@ -92,7 +93,7 @@ function Home() {
                             Button
                         </button>
                         <button class="ml-4 inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg">
-                            Button
+                        Download CV
                         </button>
                     </div>
                 </div>

@@ -8,10 +8,9 @@ function Header() {
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
+    const [enabled, setEnabled] = useState(false);
 
-    const [theme, setTheme] = useState(
-        localStorage.getItem("theme") || "dark"
-    );
+    const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
     const toggleTheme = () => {
         if (theme === "light") {
             setTheme("dark");
@@ -55,31 +54,62 @@ function Header() {
                             offset === 0 ? "bg-transparent" : "ffff"
                         }`}
                     >
-                        <li className="menu-link drop-shadow-2xl" onClick={closeMobileMenu}>
+                        <li
+                            className="menu-link drop-shadow-2xl"
+                            onClick={closeMobileMenu}
+                        >
                             <a href="#">ABOUT</a>
                         </li>
-                        <li className="menu-link drop-shadow-2xl" onClick={closeMobileMenu}>
+                        <li
+                            className="menu-link drop-shadow-2xl"
+                            onClick={closeMobileMenu}
+                        >
                             <a href="#">CONTACT</a>
                         </li>
-                        <li className="menu-link drop-shadow-2xl" onClick={closeMobileMenu}>
+                        <li
+                            className="menu-link drop-shadow-2xl"
+                            onClick={closeMobileMenu}
+                        >
                             <a href="#">BLOG</a>
                         </li>
                     </ul>
                     <div className="mr-4 mobile-menu" onClick={handleClick}>
                         {click ? <FiX /> : <FiMenu />}
                     </div>
-                    <div className="p-1 mr-4 border-2 border-white rounded dark-light logo-container">
-                        <div
-                            className={`"dl" ${theme === "dark" ? "active" : "not"}`}
-                            onClick={toggleTheme}
-                        >
-                            <MdDarkMode />
-                        </div>
-                        <div
-                            className={`"dl" ${theme === "dark" ? "not" : "active"}`}
-                            onClick={toggleTheme}
-                        >
-                            <MdLightMode />
+                    <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
+                        <div className="flex">
+                            <label class="inline-flex relative items-center mr-5 cursor-pointer">
+                                <input
+                                    type="checkbox"
+                                    className="sr-only peer"
+                                    checked={theme === "dark"}
+                                    readOnly
+                                />
+                                <div
+                                    onClick={() => {
+                                        toggleTheme();
+                                    }}
+                                    className="w-11 h-6 bg-[#9b2331] rounded-full peer  peer-focus:ring-[#914fac]  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#914fac]"
+                                ></div>
+                                <span className="ml-2">
+                                    <div
+                                        className={`"dl" ${
+                                            theme === "dark" ? "active" : "not"
+                                        }`}
+                                        onClick={toggleTheme}
+                                    >
+                                        <MdDarkMode />
+                                    </div>
+                                    <div
+                                        className={`"dl " ${
+                                            theme === "dark" ? "not" : "active"
+                                        }`}
+                                        onClick={toggleTheme}
+                                    >
+                                        <MdLightMode />
+                                    </div>
+                                </span>
+                            </label>
                         </div>
                     </div>
                 </div>

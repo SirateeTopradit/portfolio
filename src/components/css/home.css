@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@500&display=swap');
 
-h1{
-    font-family: 'Prompt', sans-serif;
-}
 
 .home {
     font-family: 'Press Start 2P', cursive;
@@ -21,5 +18,5 @@ h1{
     color: white;
     position: relative;
     left: 0;
-    text-shadow:0px 0px 25px rgba(0, 0, 0);
+    text-shadow:0px 0px 15px rgba(0, 0, 0);
 }
