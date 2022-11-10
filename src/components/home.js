@@ -73,7 +73,7 @@ function Home() {
             } text-white`}
         >
             <div class="container mx-auto flex px-16 py-24 md:flex-row flex-col items-center">
-                <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-center md:text-left mb-16 md:mb-0 items-center text-center">
+                <div class="lg:flex-grow md:w-1/2 lg:pr-24 flex flex-col md:items-center md:text-left mb-16 md:mb-0 items-center text-center">
                     <h1 className="m-5 text-3xl text-left sm:text-4xl">
                         <span class="title-font sm:text-xl text-l mb-4 font-medium inline">Hi </span>
                         <span
@@ -90,7 +90,7 @@ function Home() {
                     </p>
                     <div class="flex justify-center">
                         <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                            Button
+                            Discovery
                         </button>
                         <button class="ml-4 inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg">
                         Download CV
