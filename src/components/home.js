@@ -1,15 +1,7 @@
 import React, { useState, useEffect, useRef, Fragment } from "react";
 import Typed from "typed.js";
-import { Stage, useGLTF } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import { GLTFModel, AmbientLight, DirectionLight } from "react-3d-viewer";
 import "./css/home.css";
 import "@google/model-viewer/dist/model-viewer";
-
-function Model(props) {
-    const { scene } = useGLTF("./pic/deal_with_it_doge.glb");
-    return <primitive object={scene} {...props} />;
-}
 
 function Home() {
     const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
@@ -35,14 +27,53 @@ function Home() {
         };
     }, []);
 
+    const locale = "en";
+    const [today, setDate] = React.useState(new Date());
+
+    React.useEffect(() => {
+        const timer = setInterval(() => {
+            setDate(new Date());
+        }, 1000);
+        return () => {
+            clearInterval(timer);
+        };
+    }, []);
+
+    const day = today.toLocaleDateString(locale, { weekday: "long" });
+    const date = `${day}, ${today.getDate()} ${today.toLocaleDateString(
+        locale,
+        { month: "long" }
+    )}\n\n`;
+
+    const hour = today.getHours();
+    const wish = `Good ${
+        (hour < 12 && "Morning") || (hour < 17 && "Afternoon") || "Evening"
+    }, `;
+
+    const time = today.toLocaleTimeString(locale, { hour12: false });
+
+    const [windowSize, setWindowSize] = useState(getWindowSize());
+
+    useEffect(() => {
+        function handleWindowResize() {
+            setWindowSize(getWindowSize());
+        }
+
+        window.addEventListener("resize", handleWindowResize);
+
+        return () => {
+            window.removeEventListener("resize", handleWindowResize);
+        };
+    }, []);
+
     return (
         <div
             className={`min-h-screen bg-left bg-no-repeat bg-cover home ${
                 theme === "dark" ? "dark" : "light"
-            } text-white p-20`}
+            } text-white`}
         >
-            <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-                <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <div class="container mx-auto flex px-16 py-24 md:flex-row flex-col items-center">
+                <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-center md:text-left mb-16 md:mb-0 items-center text-center">
                     <h1 className="m-5 text-3xl text-left sm:text-4xl">
                         <span
                             class="title-font sm:text-4xl text-3xl mb-4 font-medium inline"
@@ -50,10 +81,11 @@ function Home() {
                         ></span>
                     </h1>
                     <p class="mb-8 leading-relaxed shadow">
-                        Copper mug try-hard pitchfork pour-over freegan heirloom
-                        neutra air plant cold-pressed tacos poke beard tote bag.
-                        Heirloom echo park mlkshk tote bag selvage hot chicken
-                        authentic tumeric truffaut hexagon try-hard chambray.
+                        {date} {time} <br />
+                        {wish}
+                        <br />
+                        Width: {windowSize.innerWidth} Height:{" "}
+                        {windowSize.innerHeight}
                     </p>
                     <div class="flex justify-center">
                         <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
@@ -65,11 +97,16 @@ function Home() {
                     </div>
                 </div>
                 <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-                    <img src={require('./pic/Saly.png')} alt="saly" />
+                    <img src={require("./pic/Saly.png")} alt="saly" />
                 </div>
             </div>
         </div>
     );
+}
+
+function getWindowSize() {
+    const { innerWidth, innerHeight } = window;
+    return { innerWidth, innerHeight };
 }
 
 export default Home;

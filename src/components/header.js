@@ -43,7 +43,7 @@ function Header() {
             <div className="container max-w-6xl ">
                 <div className="flex items-center justify-between h-12 header-container drop-shadow-2xl">
                     <div className="logo-container logo drop-shadow-2xl">
-                        <a href="#">axcvxcv</a>
+                        <a href="#">Portfoio</a>
                     </div>
                     <div className="ml-4 logo-container logo-active">
                         <a href="#">

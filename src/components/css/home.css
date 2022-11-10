@@ -21,23 +21,5 @@ h1{
     color: white;
     position: relative;
     left: 0;
-    text-shadow:
-        1px 0px 0px #c4dbe2,
-        2px 0px 0px #b4d1d9,
-        3px 0px 0px #a6c6cf,
-        4px 0px 0px #94b8c3,
-        5px 0px 0px #87aeb9,
-        0px 0px 25px rgba(0, 0, 0);
-    transition: .5s ease-in-out;
-}
-
-.shadow:hover {
-    left: 15px;
-    text-shadow:
-        -1px 0px 0px #c4dbe2,
-        -2px 0px 0px #b4d1d9,
-        -3px 0px 0px #a6c6cf,
-        -4px 0px 0px #94b8c3,
-        -5px 0px 0px #87aeb9,
-        0px 0px 25px rgba(0, 0, 0);
+    text-shadow:0px 0px 25px rgba(0, 0, 0);
 }
