@@ -36,13 +36,13 @@ function Header() {
     return (
         <div
             className={`fixed w-full h-12 header z-50 ${
-                offset === 0 ? "bg-transparent text-white" : "fff"
+                (offset === 0)&&!click ? "bg-transparent text-white" : "fff"
             }`}
         >
             <div className="container max-w-6xl ">
-                <div className="flex items-center justify-between h-12 header-container drop-shadow-2xl">
+                <div className="flex items-center justify-between h-12 m-auto header-container drop-shadow-2xl">
                     <div className="logo-container logo drop-shadow-2xl">
-                        <a href="#">Portfoio</a>
+                        <a href="#">Portfolio</a>
                     </div>
                     <div className="ml-4 logo-container logo-active">
                         <a href="#">
@@ -50,8 +50,8 @@ function Header() {
                         </a>
                     </div>
                     <ul
-                        className={`${click ? "menu active " : "menu "} ${
-                            offset === 0 ? "bg-transparent" : "ffff"
+                        className={`${click ? "menu active" : "menu "} ${
+                            (offset === 0)&&!click ? "bg-transparent" : "fff"
                         }`}
                     >
                         <li
@@ -73,7 +73,7 @@ function Header() {
                             <a href="#">BLOG</a>
                         </li>
                     </ul>
-                    <div className="mr-4 mobile-menu" onClick={handleClick}>
+                    <div className="ml-[3.25rem] mobile-menu" onClick={handleClick}>
                         {click ? <FiX /> : <FiMenu />}
                     </div>
                     <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
