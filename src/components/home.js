@@ -72,13 +72,13 @@ function Home() {
                 theme === "dark" ? "dark" : "light"
             } text-white`}
         >
-            <div class="container mx-auto flex px-16 py-24 md:flex-row flex-col items-center max-w-[75%]">
-                <div class="lg:flex-grow md:w-1/2 lg:pr-24 flex flex-col md:items-center md:text-left mb-16 md:mb-0 items-center text-center">
+            <div class="container mx-auto flex px-16 py-24 md:flex-row flex-col items-center max-w-[75%] h-[100vh]">
+                <div class="lg:flex-grow md:w-3/4 lg:pr-24 flex flex-col md:items-center md:text-left mb-16 items-center text-center mt-auto  md:mt-0">
                     
-                    <h1 className="m-5 text-3xl text-left sm:text-4xl">
-                        <span class="title-font sm:text-xl text-l mb-4 font-medium inline">Hi </span>
+                    <h1 className="m-5 left text- sm:text-sm md:text-xl">
+                        <span class="title-font mb-4 font-medium inline">Hi </span>
                         <span
-                            class="title-font sm:text-xl text-m mb-4 font-medium inline"
+                            class="title-font mb-4 font-medium inline"
                             ref={el}
                         ></span>
                     </h1>
@@ -98,7 +98,7 @@ function Home() {
                         </button>
                     </div>
                 </div>
-                <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 md:inset-x-0 ">
+                <div class="lg:max-w-lg lg:w-full md:w-1/2 mb-auto w-5/6 md:inset-x-0  md:mb-0">
                     <img src={require("./pic/Saly.png")} alt="saly" />
                 </div>
             </div>

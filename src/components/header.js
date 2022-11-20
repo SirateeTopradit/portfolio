@@ -55,22 +55,22 @@ function Header() {
                         }`}
                     >
                         <li
-                            className="menu-link drop-shadow-2xl"
+                            className="menu-link"
                             onClick={closeMobileMenu}
                         >
                             <a href="#">ABOUT</a>
                         </li>
                         <li
-                            className="menu-link drop-shadow-2xl"
+                            className="menu-link"
                             onClick={closeMobileMenu}
                         >
                             <a href="#">CONTACT</a>
                         </li>
                         <li
-                            className="menu-link drop-shadow-2xl"
+                            className="menu-link"
                             onClick={closeMobileMenu}
                         >
-                            <a href="#">BLOG</a>
+                            <a href="#">PROJECT</a>
                         </li>
                     </ul>
                     <div className="ml-[3.25rem] mobile-menu" onClick={handleClick}>
